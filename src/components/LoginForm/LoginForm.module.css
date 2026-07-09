@@ -1,0 +1,135 @@
+/* 1. Внешний контейнер на весь экран */
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(26, 26, 26);
+  /* Тёмный фон #1a1a1a */
+  padding: 0 16px;
+  /* Защита от прижимания к краям на мобилках */
+  box-sizing: border-box;
+}
+
+/* 2. Заголовок "Авторизация" */
+.pageWrapper h4 {
+  color: rgb(245, 245, 220);
+  /* Мягкий молочный цвет текста */
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* 3. Карточка формы авторизации */
+.formContainer {
+  background-color: rgb(34, 34, 34);
+  /* Тёмно-серый контрастный фон */
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 340px;
+  /* Сделал чуть уже, чем регистрация, так как полей меньше */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Отступы между инпутами и кнопкой */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. Общие стили для полей ввода */
+.formInput {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(26, 26, 26);
+  color: rgb(240, 238, 233);
+  /* Мягкий фарфоровый цвет текста при вводе */
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Подсветка инпута при клике */
+.formInput:focus {
+  border-color: rgb(65, 105, 225);
+  /* Royal Blue */
+  box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.2);
+}
+
+.formInput::placeholder {
+  color: rgb(130, 130, 130);
+}
+
+/* 5. Кнопка отправки */
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(45, 45, 45);
+  color: rgb(245, 245, 220);
+  /* Молочный текст */
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: rgb(65, 105, 225);
+  /* Плавный переход в Royal Blue */
+  border-color: rgb(65, 105, 225);
+  color: white;
+  box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+  /* Легкий эффект нажатия */
+}
+
+/* Текст под кнопкой */
+.switchText {
+  color: rgb(130, 130, 130);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+/* Сама кликабельная ссылка */
+.switchLink {
+  color: rgb(65, 105, 225);
+  /* Наш Royal Blue */
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+/* Эффект при наведении */
+.switchLink:hover {
+  color: rgb(100, 149, 237);
+  /* Слегка светлеет */
+}
+
+/* 6. Адаптивность для мобильных телефонов */
+@media (max-width: 480px) {
+  .formContainer {
+    max-width: 280px;
+    /* На совсем маленьких экранах карточка аккуратно ужмётся */
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .pageWrapper h4 {
+    font-size: 1.3rem;
+  }
+}
